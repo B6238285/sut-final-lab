@@ -10,9 +10,9 @@ import (
 
 type Employee struct {
 	gorm.Model
-	Name       string `valid: "required~success all"` //ต้องว่าง
+	Name       string `valid:"required~success all"`
 	Email      string
-	EmployeeID string `valid: "matches(([JML]//d{8}))$~not match employee id"` //รหัส  J M L เลข 8 หลัก
+	EmployeeID string `valid: "matches(([JML]//d{8}))$~not match employee id"`
 }
 
 func TestEmployeeValidate(t *testing.T) {
